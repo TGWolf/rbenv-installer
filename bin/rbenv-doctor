@@ -2,6 +2,7 @@
 # Usage: rbenv doctor
 # Summary: Detects common problems in rbenv installation
 
+
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
@@ -94,6 +95,9 @@ else
 fi
 
 echo -n "Checking \`rbenv install' support: "
+
+ls "$RBENV_ROOT"/plugins/*/bin/rbenv-install
+
 rbenv_installs="$({ ls "$RBENV_ROOT"/plugins/*/bin/rbenv-install 2>/dev/null || true
                     which -a rbenv-install 2>/dev/null || true
                   } | uniq)"
