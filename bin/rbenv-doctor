@@ -5,6 +5,8 @@
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
+set -x
+
 indent() {
   sed 's/^/  /'
 }
