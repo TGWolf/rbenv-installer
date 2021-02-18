@@ -5,8 +5,6 @@
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
-set -x
-
 indent() {
   sed 's/^/  /'
 }
@@ -96,7 +94,7 @@ else
 fi
 
 echo -n "Checking \`rbenv install' support: "
-rbenv_installs="$({ ls "$RBENV_ROOT"/plugins/ruby-build/bin/rbenv-install 2>/dev/null || true
+rbenv_installs="$({ ls "$RBENV_ROOT"/plugins/*/bin/rbenv-install 2>/dev/null || true
                     which -a rbenv-install 2>/dev/null || true
                   } | uniq)"
 num_installs="$(wc -l <<<"$rbenv_installs")"
